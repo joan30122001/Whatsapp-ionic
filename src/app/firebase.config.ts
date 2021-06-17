@@ -1,9 +1,10 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyDP2nIFLm3ZczFxqsl5bZbYe7sSQGC5WO4",
-  authDomain: "whatsup-acdf7.firebaseapp.com",
-  projectId: "whatsup-acdf7",
-  storageBucket: "whatsup-acdf7.appspot.com",
-  messagingSenderId: "419206615116",
-  appId: "1:419206615116:web:577b47e4c8bf606fb064e9",
-  measurementId: "G-FE0TRFSB8P"
+  apiKey: "AIzaSyBotTjSrYTQplvs3IQuxYrDndNcwwBmVbE",
+  authDomain: "loiczapp-a1222.firebaseapp.com",
+  projectId: "loiczapp-a1222",
+  storageBucket: "loiczapp-a1222.appspot.com",
+  messagingSenderId: "685630445335",
+  appId: "1:685630445335:web:864bf78a0530aedfb68952",
+  measurementId: "G-7B9CZ8LDR9"
+
 }

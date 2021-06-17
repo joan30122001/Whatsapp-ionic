@@ -14,7 +14,7 @@
       <div class="images">
         <img src="../assets/signup.png">
       </div>
-      <form [formGroup]=" validationFormUser" (ngSubmit)="logeMe( validationFormUser.value)">
+      <form [formGroup]=" validationFormUser" (ngSubmit)="logeMeI(validationFormUser.value)">
 
 
         <div class="form">
@@ -46,12 +46,12 @@
 
        </div>
 
-      </form>
-      <div class="actions">
+       <div class="actions">
         <ion-button class="submit-btn" expand="block" fill="solid"  type="submit" [disabled]="!validationFormUser.value"> SignIn </ion-button>
         <p (click)="inscription()"> S' inscrire </p>
         <p (click)="forgetP()" > Mot de passe oublié ? </p>
       </div>
+      </form>
     <!-- </ion-card-content>
   </ion-card> -->
 </ion-content>

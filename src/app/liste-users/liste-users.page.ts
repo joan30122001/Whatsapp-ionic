@@ -72,4 +72,13 @@ export class ListeUsersPage implements OnInit {
     // })
   }
 
+  backmenu(){
+    // this.modalctrl.dismiss();
+    this.router.navigate(['./tabs/tab1'])
+  }
+
+  nouvgroup(){
+    this.router.navigate(['./creategroup'])
+  }
+
 }

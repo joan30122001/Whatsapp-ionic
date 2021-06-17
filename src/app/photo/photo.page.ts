@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { UserPhoto, PhotoService } from '../services/photo.service';
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 
 
 @Component({

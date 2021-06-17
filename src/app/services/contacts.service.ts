@@ -14,7 +14,7 @@ export class ContactsService {
   contacts: ContactModel[];
   user = {
     avatar:
-    "assets/ui.jpg"
+    "../assets/sign.png"
   };
 
 
@@ -26,31 +26,17 @@ export class ContactsService {
    getData(): ContactModel[] {
     return [
       {
-        contactName: "marlin",
+        contactName: "Loic",
         contactAvatar:
-          "assets/ui.jpg",
+          "../assets/sign.png",
         snippet: "Listen, I've had a pretty messed up day...",
         time: new Date(Date.now())
       },
       {
-        contactName: "Han",
+        contactName: "Delano",
         contactAvatar:
-           "assets/ui.jpg",
+           "../assets/sign.png",
         snippet: "I've got enough on my plate as it is, and I...",
-        time: new Date(Date.now())
-      },
-      {
-        contactName: "Rey",
-        contactAvatar:
-          "assets/ui.jpg",
-        snippet: "You will remove these restraints and leave...",
-        time: new Date(Date.now())
-      },
-      {
-        contactName: "Luke",
-        contactAvatar:
-          "assets/ui.jpg",
-        snippet: "I feel the good in you, the conflict...",
         time: new Date(Date.now())
       }
     ];

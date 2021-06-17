@@ -58,6 +58,10 @@ const routes: Routes = [
   {
     path: 'qrcode',
     loadChildren: () => import('./qrcode/qrcode.module').then( m => m.QrcodePageModule)
+  },
+  {
+    path: 'creategroup',
+    loadChildren: () => import('./creategroup/creategroup.module').then( m => m.CreategroupPageModule)
   }
 ];
 @NgModule({

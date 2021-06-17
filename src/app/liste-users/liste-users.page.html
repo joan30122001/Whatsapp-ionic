@@ -2,7 +2,7 @@
   <ion-toolbar color="warning">
 
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-icon name="arrow-back" (click)='backmenu()'></ion-icon>
     </ion-buttons>
 
     <ion-title>CONTACTS</ion-title>
@@ -20,7 +20,7 @@
 
 <ion-content>
   <ion-item lines="full">
-    <ion-button slot="start" size="small" fill="clear">
+    <ion-button slot="start" size="small" fill="clear" (click)="nouvgroup()">
       <ion-icon name="people-outline"></ion-icon>
       Nouv. groupe
     </ion-button>
@@ -35,13 +35,9 @@
       <ion-icon name="qr-code-outline"></ion-icon>
     </ion-button>
   </ion-item>
-    <!-- <ion-button slot="end" size="small" fill="clear">
-      Nouveau groupe
-    </ion-button> -->
 
 
-
-  <ion-item *ngFor="let user of TabUserDiscuss" class="ion-activatable"(click)="GoToConv( user.nom, user.image )" >
+  <ion-item *ngFor="let user of TabUserDiscuss" class="ion-activatable" (click)="GoToConv( user.nom, user.image )" >
     <ion-avatar slot="start">
       <img src={{user.image}}/>
       <ion-ripple-effect></ion-ripple-effect>
