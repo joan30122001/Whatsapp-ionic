@@ -1,17 +1,24 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-item *ngFor="let user of users |async"  class="ion-activatable"  detail routerLink="/conversations">
+    <ion-avatar slot="start" >
+      <img [src]="user.photo"/>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-avatar>
+    <ion-label class="ion-text-wrap">
+      <h2 class="text-height">
+        <strong>{{ user.name }}</strong>
+      </h2>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    </ion-label>
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-item>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning">
+      <ion-icon color="light" name="chatbox-ellipses"  (click)="discute()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

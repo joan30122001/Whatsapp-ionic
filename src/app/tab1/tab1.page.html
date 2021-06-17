@@ -1,17 +1,97 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-list class="margin-bottom ion-no-padding">
+  <ion-item lines="none" class="ion-activatable">
+    <ion-avatar slot="start">
+      <img [src]="contactsService.user?.avatar" />
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-avatar>
+    <ion-label class="ion-text-wrap">
+      <h2 class="text-height">
+        <strong>Mon status</strong>
+      </h2>
+      <p class="text-height">Tap to add status</p>
+    </ion-label>
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item-group>
+    <ion-item-divider class="divider">
+      <ion-label color="dark">Recent updates</ion-label>
+    </ion-item-divider>
+    <!-- <ion-item
+      *ngFor="let contact of contactsService.contacts"
+      class="ion-activatable"
+    >
+      <ion-avatar slot="start">
+        <img [src]="contact?.contactAvatar" />
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-avatar>
+      <ion-label class="ion-text-wrap">
+        <h2 class="text-height">
+          <strong>{{ contact?.contactName }}</strong>
+        </h2>
+        <p class="text-height">{{ contact?.time | date: "medium" }}</p>
+      </ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-item> -->
+  </ion-item-group>
+</ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="pen-fab">
+  <ion-fab-button color="light" size="small">
+    <ion-icon color="warning" name="pencil-sharp"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" >
+  <ion-fab-button color="warning"(click)="photoService.addNewToGallery()">
+    <ion-icon color="light" name="camera" ></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content>
+  <div *ngIf= "yes">
+    <div class="progress-outer">
+      <div class="progress-iner">
+
+      </div>
+    </div>
+    <img class="images" src="assets/shapes.svg">
+  </div>
+  <button ion-button (click)="load()">
+    <ion-item
+      *ngFor="let contact of contactsService.contacts"
+      class="ion-activatable"
+    >
+      <ion-avatar slot="start">
+        <img [src]="contact?.contactAvatar" />
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-avatar>
+      <ion-label class="ion-text-wrap">
+        <h2 class="text-height">
+          <strong>{{ contact?.contactName }}</strong>
+        </h2>
+        <p class="text-height">{{ contact?.time | date: "medium" }}</p>
+      </ion-label>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-item>
+  </button>
 </ion-content>

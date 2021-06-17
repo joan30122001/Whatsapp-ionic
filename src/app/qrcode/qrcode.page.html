@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>qrcode</ion-title>
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" (click)='backmenu()'></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button *ngIf="!readyToScan" (click)="prepareScanner()" size="large">PREPARE SCANNER</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="readyToScan">
+      <ion-col text-center>
+        <ion-button *ngIf="!scanning" (click)="toggleScanner()" color="success" size="large">START SCANNING</ion-button>
+        <ion-button *ngIf="scanning" (click)="toggleScanner()" color="danger" size="large">STOP SCANNING</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

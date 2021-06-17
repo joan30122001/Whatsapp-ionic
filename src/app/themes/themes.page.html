@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="warning">
+
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" (click)='backmenu()'></ion-icon>
+    </ion-buttons>
+
+    <ion-title>themes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Dark theme</ion-label>
+    <ion-toggle slot="end" (ionChange)='toggleTheme($event)'></ion-toggle>
+  </ion-item>
+</ion-content>

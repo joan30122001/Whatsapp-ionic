@@ -1,0 +1,33 @@
+.pen-fab {
+  bottom: 70px;
+}
+
+.divider {
+  --background: #e2e1e1;
+}
+
+
+page-progress{
+  .progress-outer{
+    width: 100%;
+    height: 2px;
+  }
+  .progress-inner{
+    min-width: 0%;
+    max-width: 100%;
+    height: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #545454;
+    width: 50%;
+  }
+}
+
+button{
+  width: 100%;
+}
+
+.images{
+  width: 100%;
+  height: 450px;
+}

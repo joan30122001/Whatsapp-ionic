@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color:rgb(83, 83, 83)">
+
+  <!-- <ion-card style="background-image: url('assets/log.jpg');" class="head"> -->
+
+
+
+    <!-- <ion-card-content> -->
+      <div class="images">
+        <img src="../assets/signup.png">
+      </div>
+      <form [formGroup]=" validationFormUser" (ngSubmit)="logeMe( validationFormUser.value)">
+
+
+        <div class="form">
+        <ion-item>
+            <ion-input formControlName="email" placeholder="Email" type="text"></ion-input>
+        </ion-item>
+        <div class="">
+         <ng-container *ngFor= "let validation of validationUserMessage.email">
+            <div  class="error_message" *ngIf="validationFormUser.get('email').hasError(validation.type) && (validationFormUser.get('email').dirty || validationFormUser.get('email').touched ) " >
+              {{ validation.message}}
+
+            </div>
+         </ng-container>
+        </div>
+        <br>
+
+
+        <ion-item>
+          <ion-input formControlName="password" placeholder="passwword" type="password"></ion-input>
+        </ion-item>
+        <div class="">
+          <ng-container *ngFor= "let validation of validationUserMessage.password">
+             <div  class="error_message" *ngIf="validationFormUser.get('password').hasError(validation.type) && (validationFormUser.get('password').dirty || validationFormUser.get('password').touched ) " >
+               {{ validation.message}}
+
+             </div>
+          </ng-container>
+         </div>
+
+       </div>
+
+      </form>
+      <div class="actions">
+        <ion-button class="submit-btn" expand="block" fill="solid"  type="submit" [disabled]="!validationFormUser.value"> SignIn </ion-button>
+        <p (click)="inscription()"> S' inscrire </p>
+        <p (click)="forgetP()" > Mot de passe oublié ? </p>
+      </div>
+    <!-- </ion-card-content>
+  </ion-card> -->
+</ion-content>
