@@ -17,7 +17,6 @@ export class LanguePage implements OnInit {
     private translateConfigService: TranslateConfigService
   ) {
     this.Language = this.translateConfigService.getDefaultLanguage();
-
    }
 
   ngOnInit() {

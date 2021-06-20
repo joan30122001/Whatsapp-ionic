@@ -56,7 +56,6 @@ export class LoginPage implements OnInit {
 
 
   async logeMeI(value) {
-    console.log('jdjdjdjdjdj')
     try {
       this.authservice.logeMen(value).then(resp => {
         console.log(resp);

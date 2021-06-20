@@ -1,39 +1,58 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-back-button  slot="start"></ion-back-button>
-  <ion-title>
-      <div class="status">En ligne</div>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" (click)='backmenu()'></ion-icon>
+    </ion-buttons>
+    <ion-title>
+      <div class="status">
+        <small>En ligne</small>
+      </div>
     </ion-title>
     <ion-avatar slot="start">
-      <img src="[ {{ image}}] "/>
+      <img src="[{{ image}}] "/>
       <ion-ripple-effect></ion-ripple-effect>
     </ion-avatar>
     <p slot="start">
       <strong>{{ nom }}</strong>
     </p>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon color="light" name="videocam"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon color="light" name="call"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon color="light" name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="b" style="background-image: url('assets/bg.jpg');">
+  <div class="conv" style="background-image: url('assets/bg.jpg');">
 
 
     <ion-item lines="none">
-      <ion-badge color="warning" slot="end">Hey Luke comment ça va ?! <ion-note color="medium">21:16 <ion-icon
+      <ion-badge color="warning" slot="end">Yo bro xdk ? <ion-note color="medium">21:16 <ion-icon
             name="done-all"></ion-icon>
         </ion-note>
       </ion-badge>
     </ion-item>
 
     <ion-item lines="none">
-      <ion-badge color="light" slot="start">Plutôt bien merci <ion-note color="medium">21:17</ion-note>
+      <ion-badge color="danger" slot="start">Yep gar chui la et toi ? <ion-note color="medium">21:17</ion-note>
       </ion-badge>
     </ion-item>
   </div>
 </ion-content>
 
 
-<ion-footer>
+
+
+
+
+<!-- <ion-footer>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button fill="outline" shape="round" size="small">
@@ -48,6 +67,41 @@
         Envoyer
       </ion-button>
     </ion-buttons>
+   </ion-toolbar>
+</ion-footer> -->
 
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar style="height: auto;">
+    <!-- <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-button (click)="showEmojiPicker = !showEmojiPicker">
+        <ion-icon slot="icon-only" name="happy"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-textarea autoGrow rows="1" [(ngModel)]="newMsg" class="message-input" [placeholder]="'Taper message'"></ion-textarea>
+    <ion-buttons slot="end">
+      <ion-button color="primary"  class="msg-btn" (click)="sendMessage">
+        <ion-icon slot="icon-only" name="send"></ion-icon>
+      </ion-button>
+      <!-- <ion-button>
+        <ion-icon slot="icon-only" name="attach" color="primary"></ion-icon>
+      </ion-button> -->
+      <ion-button>
+        <ion-icon slot="icon-only" name="camera-outline" color="primary"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="mic-outline" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
+
+  <div class="emojiContainer" [style.height]="showEmojiPicker?'300px':'0px'"> <!--Show/Hide emoji picker. Don't use *ngIf because the component will be created again and again and cause performance issue-->
+    <emoji-picker (onEmojiSelect)="addEmoji($event)"></emoji-picker>
+  </div>
 </ion-footer>

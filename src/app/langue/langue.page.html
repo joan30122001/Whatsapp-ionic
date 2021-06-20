@@ -13,7 +13,7 @@
 <ion-content>
   <ion-item>
     <ion-label>Langue</ion-label>
-    <ion-select [(ngModel)]="Language" [value]="language" (ionChange)="changeLanguage()" slot="end">
+    <ion-select [(ngModel)]="Language" [value]="language" (ionChange)="languageChanged()" slot="end">
       <ion-select-option value="en">English</ion-select-option>
       <ion-select-option value="es">Spanish</ion-select-option>
       <ion-select-option value="fr">French</ion-select-option>

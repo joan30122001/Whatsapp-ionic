@@ -6,16 +6,39 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content padding center text-center>
+  <!-- Once form is submiited, call the onAddGroup function and pass in the form i.e. the values inside the form -->
+  <form #form="ngForm" (ngSubmit)="onAddGroup(form)">
+    <ion-item>
+      <ion-input placeholder="Group Name" type="text" name="groupName" required=true [(ngModel)]="groups.groupName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Group Description" name="groupDescription" required=true [(ngModel)]="groups.groupDescription"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Profile Picture URL" type="text" name="profilePicture" [(ngModel)]="groups.profilePicture"></ion-input>
+    </ion-item>
 
-<div>
-  <h2 (click)="editGroupName()">{{newGroup.groupName}}</h2>
-</div>
-<div>
-  Tap on the pic or group name to change it.
-</div>
-<div class="spacer" style="height: 10px;"></div>
-<div>
-  <button ion-button round outline (click)="createGroup()">Create</button>
-</div>
+    <br>
+    <ion-button type="submit" block shape="round" [disabled]="!form.valid">Create Group
+      <ion-icon slot="start" name="send"></ion-icon>
+    </ion-button>
+  </form>
+
+  <!-- <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [routerLink]="['/newgroup']">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Groups</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/groupchat']">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Group Chat</ion-label>
+      </ion-tab-button>
+      <ion-tab-button [routerLink]="['/groupmembers']">
+        <ion-icon name="people"></ion-icon>
+        <ion-label>Members</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
 </ion-content>
